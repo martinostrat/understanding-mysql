@@ -11,7 +11,7 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "update customers set name = 'Uus Peeter' where id = 4";
+    const sql = "select * from customers limit 3";
 
     con.query(sql, (err, result, fields) => {
         if (err) throw err;
