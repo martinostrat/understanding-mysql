@@ -11,9 +11,14 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "select * from customers limit 5 offset 2";
+    const sql = "insert into products (id, name) values ?";
+    let values = [
+        [154, 'Chocolate Heaven'],
+        [155, 'Tasty Lemons'],
+        [156, 'Vanilla Dreams']
+    ]
 
-    con.query(sql, (err, result, fields) => {
+    con.query(sql, [values], (err, result, fields) => {
         if (err) throw err;
         console.log(result)
     });
