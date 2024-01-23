@@ -11,7 +11,7 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "SELECT users.name AS user, products.name AS favorite FROM users left JOIN products ON users.favorite_product = products.id";
+    const sql = "SELECT users.name AS user, products.name AS favorite FROM users right JOIN products ON users.favorite_product = products.id";
 
     con.query(sql, (err, result, fields) => {
         if (err) throw err;
