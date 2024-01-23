@@ -11,11 +11,11 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "select name, id from customers";
+    const sql = "select * from customers where id between 2 and 5";
 
     con.query(sql, (err, result, fields) => {
         if (err) throw err;
-        console.log(result);
+        console.log(result)
     });
 });
 
