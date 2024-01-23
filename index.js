@@ -11,14 +11,9 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "insert into products (id, name) values ?";
-    let values = [
-        [154, 'Chocolate Heaven'],
-        [155, 'Tasty Lemons'],
-        [156, 'Vanilla Dreams']
-    ]
+    const sql = "SELECT users.name AS user, products.name AS favorite FROM users JOIN products ON users.favorite_product = products.id";
 
-    con.query(sql, [values], (err, result, fields) => {
+    con.query(sql, (err, result, fields) => {
         if (err) throw err;
         console.log(result)
     });
