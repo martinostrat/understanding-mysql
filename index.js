@@ -9,5 +9,10 @@ const con = mysql.createConnection({
 con.connect(err => {
     if (err) throw err;
     console.log('Connected');
+
+    con.query("create database mydb", (err, result) => {
+        if (err) throw err;
+        console.log(result);
+    });
 });
 
