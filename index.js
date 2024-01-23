@@ -11,7 +11,7 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "alter table customers add column id int auto_increment primary key";
+    const sql = "insert into customers (name, address) values ('Telia AS', 'Rüütli 3')";
     con.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result.affectedRows);
