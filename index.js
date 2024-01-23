@@ -11,7 +11,7 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "delete from customers where id = 2";
+    const sql = "drop table customers";
 
     con.query(sql, (err, result, fields) => {
         if (err) throw err;
