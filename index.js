@@ -11,7 +11,7 @@ con.connect(err => {
     if (err) throw err;
     console.log('Connected');
 
-    const sql = "select * from customers where id between 2 and 5";
+    const sql = "select * from customers where address like 'A%'";
 
     con.query(sql, (err, result, fields) => {
         if (err) throw err;
